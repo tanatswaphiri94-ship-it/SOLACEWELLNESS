@@ -49,7 +49,7 @@
         content="https://solacewellness.co.zw/">
 
     <meta property="og:image"
-        content="images/hero.webp">
+        content="https://solacewellness.co.zw/images/heroimage.webp">
 
 
     <!-- =====================================================
@@ -66,7 +66,7 @@
         content="A gentle space to slow down, breathe deeply and feel cared for.">
 
     <meta name="twitter:image"
-        content="images/hero.webp">
+        content="https://solacewellness.co.zw/images/heroimage.webp">
 
 
     <!-- =====================================================
@@ -113,7 +113,7 @@
 
 
      <!--Perfomance Optimization Preload Critical Abive-the-fold Image --->
-    <link rel="preload" as="image" href="images/hero1.webp" type="image/webp">    
+    <link rel="preload" as="image" href="images/heroimage.webp" type="image/webp">
 
     <!-- =====================================================
          LOCAL BUSINESS STRUCTURED DATA
@@ -132,9 +132,9 @@
 
         "url": "https://solacewellness.co.zw/",
 
-        "telephone": "+263771234567",
+        "telephone": "+263718999313",
 
-        "email": "hello@solacewellness.co.zw",
+        "email": "tanatswaphiri94@gmail.com",
 
         "address": {
             "@type": "PostalAddress",
@@ -478,7 +478,7 @@
 
         .nav-links a {
 
-            font-size: 10px;
+            font-size: 12px;
 
             text-transform: uppercase;
 
@@ -497,6 +497,15 @@
 
         }
 
+        a:focus-visible,
+        button:focus-visible,
+        summary:focus-visible {
+
+            outline: 3px solid var(--gold);
+            outline-offset: 4px;
+
+        }
+
 
         .nav-button {
 
@@ -504,13 +513,28 @@
 
             padding: 13px 24px;
 
-            font-size: 10px;
+            font-size: 12px;
 
             text-transform: uppercase;
 
             letter-spacing: 1.5px;
 
             transition: var(--transition);
+
+        }
+
+        .menu-toggle {
+
+            display: none;
+            border: 1px solid var(--sage-dark);
+            background: transparent;
+            color: var(--dark);
+            padding: 10px 14px;
+            font: inherit;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
 
         }
 
@@ -549,7 +573,7 @@
 
             letter-spacing: 1.8px;
 
-            font-size: 10px;
+            font-size: 12px;
 
             transition: var(--transition);
 
@@ -768,9 +792,9 @@
 
             display: grid;
 
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(12, 1fr);
 
-            gap: 18px;
+            gap: 20px;
 
         }
 
@@ -781,9 +805,11 @@
 
             border: 1px solid var(--line);
 
-            padding: 32px 25px 35px;
+            padding: 30px 28px 28px;
 
             position: relative;
+            grid-column: span 3;
+            overflow: hidden;
 
             transition: var(--transition);
 
@@ -799,6 +825,40 @@
 
         }
 
+        .need-card:first-child {
+
+            grid-column: span 6;
+            min-height: 445px;
+            padding: 46px 48% 40px 42px;
+            background: var(--sage-dark);
+            border-color: var(--sage-dark);
+            color: var(--white);
+
+        }
+
+        .need-card:last-child {
+
+            grid-column: 4 / span 6;
+
+        }
+
+        .need-card:first-child::after {
+
+            content: "";
+            position: absolute;
+            inset: 0 0 0 49%;
+            background: linear-gradient(90deg, var(--sage-dark) 0%, rgba(64, 81, 68, 0.08) 28%), url("images/massageroom.webp") center / cover;
+            z-index: 0;
+
+        }
+
+        .need-card:first-child > * {
+
+            position: relative;
+            z-index: 1;
+
+        }
+
 
         .need-number {
 
@@ -809,6 +869,14 @@
             letter-spacing: 2px;
 
             margin-bottom: 22px;
+
+        }
+
+        .need-card:first-child .need-number,
+        .need-card:first-child .need-intro,
+        .need-card:first-child .treatment p {
+
+            color: rgba(255, 255, 255, 0.72);
 
         }
 
@@ -832,6 +900,19 @@
             font-size: 20px;
 
             margin-bottom: 22px;
+
+        }
+
+        .need-icon { font-size: 0; }
+        .need-icon::after { font-size: 21px; line-height: 1; }
+        .need-card:nth-child(1) .need-icon::after { content: "\273F"; }
+        .need-card:nth-child(2) .need-icon::after { content: "\2726"; }
+        .need-card:nth-child(3) .need-icon::after { content: "\263D"; }
+        .need-card:nth-child(4) .need-icon::after { content: "\273F"; }
+
+        .need-card:first-child .need-icon {
+
+            background: rgba(255, 255, 255, 0.15);
 
         }
 
@@ -874,6 +955,12 @@
 
         }
 
+        .need-card:first-child .treatment {
+
+            border-color: rgba(255, 255, 255, 0.24);
+
+        }
+
 
         .treatment strong {
 
@@ -911,8 +998,139 @@
 
             letter-spacing: 1.5px;
 
+            font-size: 0;
+
+        }
+
+        .card-link::after {
+
+            content: "Explore this ritual  \2192";
             font-size: 9px;
 
+        }
+
+        .need-card:first-child .card-link {
+
+            color: #F4D1BF;
+
+        }
+
+        .treatment-meta {
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 14px;
+            font-size: 9px;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+            color: var(--light-text);
+
+        }
+
+        .need-card:first-child .treatment-meta { color: rgba(255,255,255,0.62); }
+
+        .treatment-meta::before {
+
+            content: "";
+            width: 20px;
+            height: 1px;
+            background: currentColor;
+
+        }
+
+        /* Compact, image-led massage rituals */
+        .massage-needs {
+
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+
+        }
+
+        .need-card,
+        .need-card:first-child,
+        .need-card:last-child {
+
+            grid-column: auto;
+            min-height: 320px;
+            padding: 24px 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: var(--white);
+            border: 0;
+            background: var(--sage-dark);
+
+        }
+
+        .need-card::before {
+
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(180deg, rgba(27, 38, 31, 0.04) 28%, rgba(27, 38, 31, 0.9) 100%), url("images/massageroom.webp") center / cover;
+            transition: transform 500ms ease;
+
+        }
+
+        .need-card:nth-child(2)::before {
+            background-image: linear-gradient(180deg, rgba(27, 38, 31, 0.04) 28%, rgba(27, 38, 31, 0.9) 100%), url("images/realxingwoman.webp");
+        }
+
+        .need-card:nth-child(3)::before {
+            background-image: linear-gradient(180deg, rgba(27, 38, 31, 0.04) 28%, rgba(27, 38, 31, 0.9) 100%), url("images/bodywrap (1).webp");
+        }
+
+        .need-card:nth-child(4)::before {
+            background-image: linear-gradient(180deg, rgba(27, 38, 31, 0.04) 28%, rgba(27, 38, 31, 0.9) 100%), url("images/facialimage.webp");
+        }
+
+        .need-card:first-child::after { display: none; }
+
+        .need-card:hover::before { transform: scale(1.045); }
+
+        .need-card > * { position: relative; z-index: 1; }
+
+        .need-card .need-number,
+        .need-card:first-child .need-number {
+            position: absolute;
+            top: 22px;
+            left: 22px;
+            color: rgba(255,255,255,0.78);
+            margin: 0;
+        }
+
+        .need-icon { display: none; }
+
+        .need-card h3 {
+            font-size: 24px;
+            line-height: 1.08;
+            margin: 0 0 10px;
+        }
+
+        .need-intro,
+        .treatment p { display: none; }
+
+        .treatment,
+        .need-card:first-child .treatment {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .treatment strong { font-size: 15px; }
+
+        .treatment-meta,
+        .need-card:first-child .treatment-meta {
+            color: rgba(255,255,255,0.72);
+            margin-top: 10px;
+        }
+
+        .card-link,
+        .need-card:first-child .card-link {
+            color: #F4D1BF;
+            margin-top: 14px;
         }
 
 
@@ -1497,7 +1715,7 @@
 
             color: var(--text);
 
-            font-size: 11px;
+            font-size: 13px;
 
             margin-bottom: 30px;
 
@@ -1510,7 +1728,7 @@
 
             color: var(--light-text);
 
-            font-size: 10px;
+            font-size: 12px;
 
         }
 
@@ -1624,6 +1842,22 @@
 
             }
 
+            .need-card,
+            .need-card:first-child {
+
+                grid-column: span 1;
+
+            }
+
+            .need-card:last-child { grid-column: span 1; }
+
+            .need-card:first-child {
+
+                min-height: 410px;
+                padding: 42px 48% 36px 34px;
+
+            }
+
 
             .hero {
 
@@ -1674,6 +1908,30 @@
 
             }
 
+            .nav-links.is-open {
+
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 6% 18px;
+                background: var(--white);
+                border-bottom: 1px solid var(--line);
+
+            }
+
+            .nav-links.is-open a {
+
+                display: block;
+                padding: 12px 0;
+                font-size: 13px;
+
+            }
+
 
             nav {
 
@@ -1686,7 +1944,13 @@
 
             .nav-button {
 
-                padding: 10px 15px;
+                display: none;
+
+            }
+
+            .menu-toggle {
+
+                display: inline-block;
 
             }
 
@@ -1722,6 +1986,29 @@
             .massage-needs {
 
                 grid-template-columns: 1fr;
+
+            }
+
+            .need-card,
+            .need-card:first-child {
+
+                grid-column: 1;
+
+            }
+
+            .need-card:last-child { grid-column: 1; }
+
+            .need-card:first-child {
+
+                min-height: 470px;
+                padding: 38px 42% 32px 28px;
+
+            }
+
+            .need-card:first-child::after {
+
+                inset: 44% 0 0;
+                background: linear-gradient(180deg, var(--sage-dark) 0%, rgba(64, 81, 68, 0.08) 36%), url("images/massageroom.webp") center / cover;
 
             }
 
@@ -1773,6 +2060,36 @@
 
         }
 
+        @media (max-width: 1050px) {
+
+            .massage-needs { grid-template-columns: repeat(2, 1fr); }
+
+            .need-card,
+            .need-card:first-child,
+            .need-card:last-child {
+                grid-column: auto;
+                min-height: 300px;
+                padding: 22px;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .massage-needs { grid-template-columns: 1fr; gap: 14px; }
+
+            .need-card,
+            .need-card:first-child,
+            .need-card:last-child {
+                grid-column: auto;
+                min-height: 270px;
+                padding: 20px;
+            }
+
+            .need-card .need-number { top: 20px; left: 20px; }
+
+        }
+
     </style>
 
 </head>
@@ -1792,7 +2109,7 @@
         <div class="topbar-left">
 
             <span>
-                📍 Harare, Zimbabwe
+                Harare, Zimbabwe
             </span>
 
             <span>
@@ -1804,13 +2121,11 @@
 
         <div class="topbar-right">
 
-            <span>
-                ☎ +263 78 422 1361
-            </span>
+            <a href="tel:+263718999313">Call or text: +263 718 999 313</a>
 
-            <span>
-                ✉ hell0@solacewellness.co.zw
-            </span>
+            <a href="https://wa.me/263784221361">WhatsApp: +263 78 422 1361</a>
+
+            <a href="mailto:tanatswaphiri94@gmail.com">tanatswaphiri94@gmail.com</a>
 
         </div>
 
@@ -1824,7 +2139,7 @@
 
     <header>
 
-        <nav>
+        <nav aria-label="Primary navigation">
 
 
             <a href="#home" class="logo">
@@ -1839,7 +2154,11 @@
 
 
 
-            <ul class="nav-links">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu">
+                Menu
+            </button>
+
+            <ul class="nav-links" id="primary-navigation">
 
                 <li>
                     <a href="#massages">
@@ -1984,19 +2303,16 @@
 
                 <h2>
 
-                    What does your body need today?
+                    Choose the kind of exhale you need.
 
                 </h2>
 
 
                 <p>
 
-                    You don't have to know which treatment
-                    to choose.
-
-                    Tell us how you're feeling, and we'll help
-                    you find a gentle way to feel a little
-                    more like yourself.
+                    Every treatment begins with a short conversation.
+                    Start with the feeling you want to leave with,
+                    and we'll shape the time around you.
 
                 </p>
 
@@ -2032,7 +2348,7 @@
 
                     <h3>
 
-                        "I need to switch off."
+                        A slower, softer day
 
                     </h3>
 
@@ -2050,21 +2366,22 @@
 
                         <strong>
 
-                            Swedish Massage
+                            The Unwind Ritual
 
                         </strong>
 
 
                         <p>
 
-                            Gentle, flowing movements that
-                            encourage relaxation and leave
-                            you feeling lighter.
+                            Swedish massage with long, flowing strokes
+                            to settle the body and quiet a busy mind.
 
                         </p>
 
 
                     </div>
+
+                    <div class="treatment-meta">60 or 90 minutes</div>
 
 
                     <a href="#contact" class="card-link">
@@ -2101,7 +2418,7 @@
 
                     <h3>
 
-                        "My body is carrying too much."
+                        Release what's been held
 
                     </h3>
 
@@ -2126,14 +2443,15 @@
 
                         <p>
 
-                            Focused massage techniques designed
-                            to work through areas of deeper
-                            tension.
+                            Intentional, slower pressure for the places
+                            your body has been protecting.
 
                         </p>
 
 
                     </div>
+
+                    <div class="treatment-meta">60 or 90 minutes</div>
 
 
                     <a href="#contact" class="card-link">
@@ -2170,7 +2488,7 @@
 
                     <h3>
 
-                        "I just want to be still."
+                        Let warmth do the work
 
                     </h3>
 
@@ -2195,13 +2513,15 @@
 
                         <p>
 
-                            Warm stones and soothing massage
-                            create a deeply calming experience.
+                            Heated basalt stones paired with unhurried
+                            massage for a grounded, restorative pause.
 
                         </p>
 
 
                     </div>
+
+                    <div class="treatment-meta">75 minutes</div>
 
 
                     <a href="#contact" class="card-link">
@@ -2238,7 +2558,7 @@
 
                     <h3>
 
-                        "I need a fresh start."
+                        Return to yourself
 
                     </h3>
 
@@ -2264,13 +2584,15 @@
 
                         <p>
 
-                            Gentle massage combined with
-                            carefully selected essential oils.
+                            A sensory reset with botanical oils selected
+                            to meet the mood you arrive with.
 
                         </p>
 
 
                     </div>
+
+                    <div class="treatment-meta">60 minutes</div>
 
 
                     <a href="#contact" class="card-link">
@@ -2369,6 +2691,7 @@
                     <img
                         src="images/scrubimage.webp"
                         alt="Relaxing body scrub treatment at Solace Wellness"
+                        loading="lazy"
                     >
 
 
@@ -2405,6 +2728,7 @@
                     <img
                         src="images/facialimage.webp"
                         alt="Calming facial treatment at Solace Wellness"
+                        loading="lazy"
                     >
 
 
@@ -2442,6 +2766,7 @@
                     <img
                         src="images/bodywrap (1).webp"
                         alt="Peaceful body treatment at Solace Wellness"
+                        loading="lazy"
                     >
 
 
@@ -2984,14 +3309,21 @@
 
                 <span>
 
-                    ☎ +263 77 123 4567
+                    <a href="tel:+263718999313">Text or call: +263 718 999 313</a>
 
                 </span>
 
 
                 <span>
 
-                    ✉ hello@solacewellness.co.zw
+                    <a href="https://wa.me/263784221361">WhatsApp or call: +263 78 422 1361</a>
+
+                </span>
+
+
+                <span>
+
+                    <a href="mailto:tanatswaphiri94@gmail.com">tanatswaphiri94@gmail.com</a>
 
                 </span>
 
@@ -3007,7 +3339,7 @@
 
 
             <a
-                href="mailto:hello@solacewellness.co.zw"
+                href="https://wa.me/263784221361"
                 class="btn"
             >
 
@@ -3134,6 +3466,27 @@
     </footer>
 
 
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const primaryNavigation = document.querySelector('#primary-navigation');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = primaryNavigation.classList.toggle('is-open');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+            menuToggle.textContent = isOpen ? 'Close' : 'Menu';
+        });
+
+        primaryNavigation.addEventListener('click', (event) => {
+            if (event.target.closest('a')) {
+                primaryNavigation.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Open navigation menu');
+                menuToggle.textContent = 'Menu';
+            }
+        });
+    </script>
 
 </body>
 
